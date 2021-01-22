@@ -6,7 +6,10 @@ __version__ = '1.1'
 """Creates environment variables for later usage"""
 
 import os
+from dotenv import load_dotenv
+
 basedir = os.path.abspath(os.path.dirname(__file__)) # Gets current folder
+load_dotenv(os.path.join(basedir, '.env'))
 
 class Config(object):
     # Creats environment variables
