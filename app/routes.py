@@ -94,6 +94,6 @@ def chat_user(username):
         db.session.commit()
         flash('Message Sent!')
         return redirect('/chat/' + username)
-    messages = Message.query.filter(or_(Message.sender_id == user.id, Message.sender_id == current_user.id))\ 
+    messages = Message.query.filter(or_(Message.sender_id == user.id, Message.sender_id == current_user.id))\
         .filter(or_(Message.receiver_id == current_user.id, Message.receiver_id == user.id)).all()              # Displays all message history
     return render_template('chat_user.html', user=user, messages=messages, form=form, title=title)
