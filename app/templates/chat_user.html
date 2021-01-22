@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content2 %}
+    <center>
+        <h1>This is your conversation with {{user.username}}</h1>
+        <br>
+        <div style="overflow:hidden scroll; height: 300px; width: 1000px">
+            {% for message in messages %}
+                <div>
+                    <p style="box-sizing: border-box; border: 2px solid; font-weight: bold; font-size: 30px;">{{message.sender.username}}</p>
+                    <br>
+                    <p style="font-size: 20px; text-align: center;">{{message.body}}</p></div>
+            {% endfor %}
+        </div>
+
+        <form action="" method="POST" novalidate>
+            {{form.hidden_tag()}}
+            <p>{{form.body(class="form-control", placeholder='Message ' + user.username, style="width: 300px; height: 50px; font-size: 17px")}}</p>
+            <p>{{form.submit(class="btn btn-primary", style="width: 130px; height: 40px; font-size: 17px")}}</p>
+            {% for error in form.body.errors %}
+                <span style="color: red">[{{error}}]</span>
+                {% endfor %}
+
+        </form>
+
+    </center>
+{% endblock %}
