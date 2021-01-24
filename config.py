@@ -6,13 +6,11 @@ __version__ = '1.1'
 """Creates environment variables for later usage"""
 
 import os
-from dotenv import load_dotenv
 
 basedir = os.path.abspath(os.path.dirname(__file__)) # Gets current folder
-load_dotenv(os.path.join(basedir, '.env'))
 
 class Config(object):
-    # Creats environment variables
-    SECRET_KEY = os.environ.get('SECRET_KEY') or 'this-is-a-bad-password'
+    # Creates environment variables
+    SECRET_KEY = os.environ.get('SECRET_KEY') or 'this-is-an-example-password'
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'sqlite:///' + os.path.join(basedir, 'app.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
