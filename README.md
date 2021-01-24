@@ -8,9 +8,9 @@ A simple chatting web application built with flask
 ## 1. Download files
 `git clone https://github.com/mks9467/ezchat.git`
 
-## 1. Install dependencies
+## 2. Install dependencies
     cd ezchat
     pip install -r requirements.txt
     
-## 1. Run webserver
+## 3. Run webserver
     python ezchat.py
