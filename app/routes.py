@@ -21,7 +21,6 @@ from sqlalchemy import or_
 
 @app.route('/')
 @app.route('/index')
-@login_required
 def index():
     return render_template('index.html', title='Home')                   # Returns home html page
 
