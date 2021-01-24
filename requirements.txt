@@ -5,3 +5,4 @@ flask_login
 flask_bootstrap
 flask_wtf
 python-dotenv
+email_validator
